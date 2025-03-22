@@ -2,6 +2,7 @@ import sys
 import os
 import json
 import re  # Import regex for cleanup
+import time
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
 
@@ -83,4 +84,14 @@ def main():
     print(f"\n✅ Quote saved to: {file_path}")
 
 if __name__ == "__main__":
+    # 1. Record start time
+    start_time = time.time()
+    
+    # 2. Run your existing main logic
     main()
+    
+    # 3. Record end time and compute elapsed
+    end_time = time.time()
+    total_time = end_time - start_time
+    
+    print(f"\n[INFO] Execution Time: {total_time:.2f} seconds")
